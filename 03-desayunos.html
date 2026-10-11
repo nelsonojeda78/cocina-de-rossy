@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desayunos de Rossy · Cocina de Rossy</title>
+<style>
+:root{
+  --marino:#1E293B; --marino2:#0F172A; --naranja:#F97316; --naranja2:#EA580C;
+  --crema:#FFF9F2; --crema2:#F1F5F9; --trigo:#FDE047; --tomate:#B91C1C;
+  --verde:#15803D; --turquesa:#2DD4BF; --gris:#64748B; --linea:#E2E8F0; --tinta:#1E293B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--tinta);line-height:1.75;
+  font-family:"Quicksand","Trebuchet MS",Verdana,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:18px}
+.wrap{max-width:1060px;margin:0 auto;padding:26px 20px 80px}
+.hero{background:linear-gradient(140deg,var(--marino),var(--marino2));color:#fff;
+  padding:46px 20px 40px;text-align:center;border-bottom:10px solid var(--naranja)}
+.hero img.logo{width:210px;height:210px;object-fit:contain;margin-bottom:16px;
+  background:var(--crema);border-radius:50%;padding:8px;
+  box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.hero h1{margin:0 0 6px;font-size:2.4rem;letter-spacing:.5px}
+.hero p{margin:6px 0;opacity:.95;font-size:1.05rem}
+.badge{display:inline-block;background:var(--naranja);color:#20303F;padding:6px 18px;
+  border-radius:99px;font-size:.82rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+h2{font-size:1.7rem;margin:54px 0 10px;padding-left:16px;border-left:10px solid var(--naranja);color:var(--marino)}
+h3{font-size:1.22rem;margin:30px 0 8px;color:var(--naranja2)}
+h4{margin:20px 0 6px;color:var(--marino)}
+p{margin:12px 0}
+.card{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:22px 26px;margin:18px 0;
+  box-shadow:0 6px 20px rgba(30,58,95,.07)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+ul,ol{padding-left:24px}
+li{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.96rem}
+th,td{border:1px solid var(--linea);padding:11px 13px;text-align:left;vertical-align:top}
+th{background:var(--marino);color:#fff;font-weight:700}
+tr:nth-child(even) td{background:#FDF8F1}
+.ok{background:#EAF7EF;border:1px solid #A9DDBE;border-left:9px solid var(--verde);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.aviso{background:#FFF4E5;border:1px solid #F0C88A;border-left:9px solid var(--naranja);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.mal{background:#FDECEC;border:1px solid #F2B4B4;border-left:9px solid var(--tomate);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.tip{background:#EEF3FA;border:1px solid #C4D4EA;border-left:9px solid var(--marino);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0}
+.nav a{background:#fff;border:2.5px solid var(--naranja);color:var(--naranja2);text-decoration:none;
+  padding:11px 20px;border-radius:99px;font-weight:800;font-size:.95rem}
+.nav a:hover{background:var(--naranja);color:#20303F}
+.nav a.sel{background:var(--marino);border-color:var(--marino);color:#fff}
+.small{font-size:.9rem;color:var(--gris)}
+.precio{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:20px 0}
+.precio .tarjeta{flex:1 1 260px;max-width:340px;background:#fff;border:3px solid var(--marino);
+  border-radius:22px;padding:22px;text-align:center;position:relative}
+.precio .tarjeta.destacada{border-color:var(--naranja);background:var(--crema2)}
+.precio .tarjeta .cinta{position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:var(--naranja);color:#20303F;font-size:.75rem;font-weight:800;padding:5px 14px;
+  border-radius:99px;letter-spacing:1px;white-space:nowrap}
+.precio .num{font-size:2.6rem;font-weight:800;color:var(--marino);margin:8px 0 0}
+.precio .num small{font-size:1rem;font-weight:700;color:var(--gris)}
+.swatch{border-radius:16px;overflow:hidden;border:1px solid var(--linea);background:#fff}
+.swatch .color{height:96px}
+.swatch .info{padding:10px 12px;font-size:.86rem}
+.swatch .info b{display:block;font-size:.95rem}
+.hex{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--gris)}
+.paso{display:flex;gap:16px;align-items:flex-start;margin:16px 0}
+.paso .num{flex:0 0 52px;height:52px;border-radius:50%;background:var(--marino);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem}
+.paso.n2 .num{background:var(--naranja);color:#20303F}
+.paso.n3 .num{background:var(--verde)}
+.paso.n4 .num{background:var(--tomate)}
+.mock-tel{max-width:330px;margin:20px auto;background:#fff;border:10px solid #20303F;
+  border-radius:34px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.mock-tel .top{background:#20303F;color:#fff;padding:12px;font-weight:800;text-align:center;font-size:.9rem}
+.mock-tel .body{padding:16px;background:#ECE5DD}
+.mock-tel .msg{background:#fff;border-radius:14px;padding:12px 14px;font-size:.9rem;margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.mock-tel .msg.yo{background:#DCF8C6;margin-left:38px}
+.mock-tel .msg b{color:var(--marino)}
+.mock-post{max-width:400px;margin:20px auto;background:#fff;border:1px solid var(--linea);
+  border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(30,58,95,.1)}
+.mock-post .cab{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+.mock-post .cab img{width:44px;height:44px;border-radius:50%;border:2px solid var(--naranja)}
+.mock-post .cab b{display:block;font-size:.95rem;color:var(--marino)}
+.mock-post .cab span{font-size:.78rem;color:var(--gris)}
+.mock-post .foto{background:var(--crema2)}
+.mock-post .foto img{width:100%;display:block}
+.mock-post .pie{padding:14px}
+.mock-post .pie .acciones{color:var(--marino);font-weight:800;font-size:.9rem;margin-bottom:6px}
+.mock-post .pie p{font-size:.93rem;margin:6px 0}
+.si{color:var(--verde);font-weight:800}
+.no{color:var(--tomate);font-weight:800}
+.chip{display:inline-block;background:var(--crema2);border:1.5px solid var(--linea);color:var(--marino);
+  border-radius:99px;padding:4px 13px;font-size:.82rem;font-weight:700;margin:3px 4px 3px 0}
+footer{text-align:center;padding:34px 20px;color:var(--gris);font-size:.88rem;
+  border-top:1px solid var(--linea);margin-top:50px}
+.dato{display:flex;gap:12px;align-items:baseline;margin:10px 0}
+.dato .k{flex:0 0 40%;font-weight:800;color:var(--marino)}
+.dato .v{flex:1}
+@media print{body{background:#fff}.card{box-shadow:none}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2{page-break-after:avoid}.card{page-break-inside:avoid}}
+@media (max-width:560px){body{font-size:17px}.hero img.logo{width:150px;height:150px}
+  .dato{display:block}.dato .k{flex:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="img/a4a822d7e5b4.jpg" alt="Logo de Cocina de Rossy">
+  <h1>Desayunos de Rossy</h1>
+  <p>Bolones, jugos, fruta y café · de lunes a sábado por la mañana</p>
+  <p style="margin-top:14px"><span class="badge">Cocina de Rossy</span></p>
+</header>
+<div class="wrap">
+  <div class="nav"><a href="index.html">Inicio</a><a href="01-perfil-del-negocio.html">Perfil del negocio</a><a href="02-marca-y-logo.html">Marca y logo</a><a href="03-desayunos.html" class="sel">Desayunos</a><a href="04-lasana.html">Lasaña</a><a href="05-precios.html">Precios</a><a href="06-plan-30-dias.html">Plan de 30 días</a><a href="07-glosario.html">Palabras y dudas</a></div>
+<p class="small">El desayuno es la decision comercial mas importante que ha tomado el negocio. La lasana tiene un costo alto y un ticket que la familia solo paga el fin de semana; el desayuno cuesta entre USD 1,05 y USD 1,72 prepararlo, se vende entre USD 2,50 y USD 3,50, y se puede vender todos los dias. Eso convierte un negocio de dos dias a la semana en un negocio de lunes a sabado, con la lasana como ingreso extra de fin de semana.</p><div class="card" style="padding:12px"><img src="img/fcfa3d6d99ee.jpg" alt="El desayuno de todos los días" style="width:100%;display:block;border-radius:12px"></div><h2>La escalera de precios</h2><p>El cliente elige cuánto quiere gastar. Así el que tiene poco compra igual, y el que tiene más deja más.</p><div class="card"><h4 style="margin-top:0">Bolón de verde con queso <span class="chip">USD 2,50</span></h4><p style="margin:6px 0"><b>Incluye:</b> Bolón de verde con queso, huevo frito y café pasado.</p><p style="margin:0" class="small">Es la puerta de entrada. Precio bajo, se prepara en minutos, deja USD 1,45.</p></div><div class="card"><h4 style="margin-top:0">Bolón con chicharrón <span class="chip">USD 3,00</span></h4><p style="margin:6px 0"><b>Incluye:</b> Bolón de verde con chicharrón, huevo frito y jugo natural.</p><p style="margin:0" class="small">El más pedido por los hombres y por quien trabaja temprano. Deja USD 1,65.</p></div><div class="card"><h4 style="margin-top:0">Desayuno completo <span class="chip">USD 3,50</span></h4><p style="margin:6px 0"><b>Incluye:</b> Bolón, huevo frito, jugo natural, ensalada de frutas pequeña y café.</p><p style="margin:0" class="small">Es el que conviene empujar: el cliente siente que recibe mucho y deja USD 1,78.</p></div><h2>Los acompañamientos: aquí está el valor agregado</h2><p>Un bolón solo se ve pobre. El mismo bolón con jugo, fruta y café se ve como un desayuno completo y se puede cobrar USD 3,50.</p><table><thead><tr><th>Acompañamiento</th><th>Precio</th><th>Variedades</th><th>Cómo se aprovecha</th></tr></thead><tbody><tr><td>Jugos naturales</td><td>USD 1,50</td><td>Naranja, morocho, maracuyá, tomate de árbol, melón, sandía.</td><td>Se preparan al momento con fruta de la zona, que es barata y de temporada.</td></tr><tr><td>Batidos</td><td>USD 2,00</td><td>De banano, papaya, avena o con leche.</td><td>El batido con avena se vende como desayuno completo para quien no quiere comer pesado.</td></tr><tr><td>Ensalada de frutas</td><td>USD 2,00</td><td>Fruta picada del día con yogur o miel opcional.</td><td>Es lo que más compran las mujeres y los jóvenes. Se prepara en vaso o en concha.</td></tr><tr><td>Café pasado</td><td>USD 1,00</td><td>Café de olla, con leche o negro.</td><td>No es para ganar: es para que el cliente no se vaya a otra parte a tomarlo.</td></tr><tr><td>Pan de ajo</td><td>USD 2,50</td><td>4 unidades, para llevar a casa.</td><td>Aprovecha el mismo horno de la lasaña.</td></tr></tbody></table><h2>Cuánto cuesta y cuánto deja</h2><table><thead><tr><th>Producto</th><th>Precio</th><th>Costo</th><th>Queda</th><th>Margen</th></tr></thead><tbody><tr><td>Bolon de verde con queso</td><td>USD 2.50</td><td>USD 1.05</td><td>USD 1.45</td><td>58%</td></tr><tr><td>Bolon con chicharron</td><td>USD 3.00</td><td>USD 1.35</td><td>USD 1.65</td><td>55%</td></tr><tr><td>Desayuno completo</td><td>USD 3.50</td><td>USD 1.72</td><td>USD 1.78</td><td>51%</td></tr><tr><td>Jugo o batido aparte</td><td>USD 1.50</td><td>USD 0.55</td><td>USD 0.95</td><td>63%</td></tr><tr><td>Ensalada de frutas</td><td>USD 2.00</td><td>USD 0.85</td><td>USD 1.15</td><td>58%</td></tr><tr><td>Cafe pasado</td><td>USD 1.00</td><td>USD 0.28</td><td>USD 0.72</td><td>72%</td></tr></tbody></table><div class="ok"><p style="margin:0"><b>Lo importante:</b> con 32 desayunos al día de lunes a sábado el negocio ingresa alrededor de <b>USD 2.434 al mes</b> y deja <b>USD 1.333</b> de contribución. Y el punto de equilibrio se alcanza con solo <b>6 desayunos completos al día</b>.</p></div><h2>Cómo se opera la mañana</h2><table><thead><tr><th>Momento</th><th>Qué se hace</th></tr></thead><tbody><tr><td>Horario</td><td>De 6:30 a 10:30 de la mañana, de lunes a sábado. Fuera de ese horario se atienden pedidos por encargo.</td></tr><tr><td>Día anterior</td><td>Se compran los verdes, la fruta y el queso; se cocinan los chicharrones y se deja lista la masa del bolón.</td></tr><tr><td>5:30 a 6:30</td><td>Se amasa y se fríen los bolones, se preparan los huevos y se corta la fruta.</td></tr><tr><td>6:30 a 10:30</td><td>Se atiende y se entrega. La fruta se corta en tandas para que no se pase.</td></tr><tr><td>10:30 a 12:00</td><td>Se lava, se ordena y se prepara la salsa de la lasaña.</td></tr><tr><td>Viernes y sábado</td><td>Después del desayuno se arma y se hornea la lasaña para el fin de semana.</td></tr></tbody></table><h2>La compra diaria</h2><table><thead><tr><th>Insumo</th><th>Cuánto</th><th>Dónde</th></tr></thead><tbody><tr><td>Verde (plátano)</td><td>6 a 8 unidades por cada 10 bolones</td><td>Mercado de La Libertad</td></tr><tr><td>Queso fresco</td><td>1,5 kg por cada 30 porciones</td><td>Mercado o proveedor fijo</td></tr><tr><td>Chicharrón</td><td>1 kg por cada 25 porciones</td><td>Carnicería del mercado</td></tr><tr><td>Huevos</td><td>1 por cliente, más 10% de reserva</td><td>Mercado</td></tr><tr><td>Fruta de temporada</td><td>Según lo que esté barato esa semana</td><td>Mercado, preguntando precio</td></tr><tr><td>Café y leche</td><td>Para 30 tazas</td><td>Distribuidor</td></tr></tbody></table><h2>El valor agregado que se comunica</h2><ul><li>La fruta se corta el mismo día: se nota en el sabor y en el color.</li><li>El bolón se amasa a mano y se fríe al momento, no se recalienta.</li><li>El jugo se prepara cuando el cliente llega, no antes.</li><li>El café es de olla, no de sobre.</li><li>Se entrega caliente y a la hora, en la casa o en el trabajo.</li><li>Se puede pedir por WhatsApp la noche anterior y se entrega a la hora acordada.</li></ul><h2>Que se vea llamativo</h2><table><thead><tr><th>Detalle</th><th>Cómo se hace</th></tr></thead><tbody><tr><td>La bandeja</td><td>Un plato blanco con el bolón, el huevo encima y la fruta en un vaso aparte. El plato blanco hace que la comida se vea más grande y más limpia.</td></tr><tr><td>El vaso del jugo</td><td>Vaso alto, con una hoja de hierbabuena o un trozo de fruta en el borde.</td></tr><tr><td>La fruta</td><td>En vaso transparente, para que se vean los colores.</td></tr><tr><td>El pan de ajo</td><td>En bolsa de papel con el sello de la marca.</td></tr><tr><td>La foto</td><td>Se publica el plato terminado a las 7 de la mañana, que es cuando la gente está decidiendo qué desayunar.</td></tr></tbody></table><h2>A quién le vende el desayuno</h2><div class="grid g2"><div class="card"><h4>Trabajadores que salen temprano</h4><p style="margin-bottom:0">Refinería, comercio y pesca. Salen de casa a las 6 y compran algo en el camino.</p></div><div class="card"><h4>Oficinas y locales del centro</h4><p style="margin-bottom:0">Piden varias porciones para el personal.</p></div><div class="card"><h4>Estudiantes</h4><p style="margin-bottom:0">Compran la opción más económica o solo el bolón.</p></div><div class="card"><h4>Familias el fin de semana</h4><p style="margin-bottom:0">Piden desayuno completo en casa, más tarde.</p></div><div class="card"><h4>Turistas y segundas viviendas</h4><p style="margin-bottom:0">En temporada alta son los que más piden jugos y fruta.</p></div></div>
+  <footer>
+    <b>Cocina de Rossy</b> · La Libertad, Santa Elena<br>
+    Pedidos por WhatsApp <b>0979354185</b> · cocinaderossy.ec@gmail.com<br>
+    <span class="small">Documento de trabajo para Rossy y su familia</span>
+    
+  </footer>
+</div>
+</body>
+</html>

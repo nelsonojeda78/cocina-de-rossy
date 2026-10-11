@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfil del negocio · Cocina de Rossy</title>
+<style>
+:root{
+  --marino:#1E293B; --marino2:#0F172A; --naranja:#F97316; --naranja2:#EA580C;
+  --crema:#FFF9F2; --crema2:#F1F5F9; --trigo:#FDE047; --tomate:#B91C1C;
+  --verde:#15803D; --turquesa:#2DD4BF; --gris:#64748B; --linea:#E2E8F0; --tinta:#1E293B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--tinta);line-height:1.75;
+  font-family:"Quicksand","Trebuchet MS",Verdana,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:18px}
+.wrap{max-width:1060px;margin:0 auto;padding:26px 20px 80px}
+.hero{background:linear-gradient(140deg,var(--marino),var(--marino2));color:#fff;
+  padding:46px 20px 40px;text-align:center;border-bottom:10px solid var(--naranja)}
+.hero img.logo{width:210px;height:210px;object-fit:contain;margin-bottom:16px;
+  background:var(--crema);border-radius:50%;padding:8px;
+  box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.hero h1{margin:0 0 6px;font-size:2.4rem;letter-spacing:.5px}
+.hero p{margin:6px 0;opacity:.95;font-size:1.05rem}
+.badge{display:inline-block;background:var(--naranja);color:#20303F;padding:6px 18px;
+  border-radius:99px;font-size:.82rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+h2{font-size:1.7rem;margin:54px 0 10px;padding-left:16px;border-left:10px solid var(--naranja);color:var(--marino)}
+h3{font-size:1.22rem;margin:30px 0 8px;color:var(--naranja2)}
+h4{margin:20px 0 6px;color:var(--marino)}
+p{margin:12px 0}
+.card{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:22px 26px;margin:18px 0;
+  box-shadow:0 6px 20px rgba(30,58,95,.07)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+ul,ol{padding-left:24px}
+li{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.96rem}
+th,td{border:1px solid var(--linea);padding:11px 13px;text-align:left;vertical-align:top}
+th{background:var(--marino);color:#fff;font-weight:700}
+tr:nth-child(even) td{background:#FDF8F1}
+.ok{background:#EAF7EF;border:1px solid #A9DDBE;border-left:9px solid var(--verde);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.aviso{background:#FFF4E5;border:1px solid #F0C88A;border-left:9px solid var(--naranja);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.mal{background:#FDECEC;border:1px solid #F2B4B4;border-left:9px solid var(--tomate);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.tip{background:#EEF3FA;border:1px solid #C4D4EA;border-left:9px solid var(--marino);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0}
+.nav a{background:#fff;border:2.5px solid var(--naranja);color:var(--naranja2);text-decoration:none;
+  padding:11px 20px;border-radius:99px;font-weight:800;font-size:.95rem}
+.nav a:hover{background:var(--naranja);color:#20303F}
+.nav a.sel{background:var(--marino);border-color:var(--marino);color:#fff}
+.small{font-size:.9rem;color:var(--gris)}
+.precio{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:20px 0}
+.precio .tarjeta{flex:1 1 260px;max-width:340px;background:#fff;border:3px solid var(--marino);
+  border-radius:22px;padding:22px;text-align:center;position:relative}
+.precio .tarjeta.destacada{border-color:var(--naranja);background:var(--crema2)}
+.precio .tarjeta .cinta{position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:var(--naranja);color:#20303F;font-size:.75rem;font-weight:800;padding:5px 14px;
+  border-radius:99px;letter-spacing:1px;white-space:nowrap}
+.precio .num{font-size:2.6rem;font-weight:800;color:var(--marino);margin:8px 0 0}
+.precio .num small{font-size:1rem;font-weight:700;color:var(--gris)}
+.swatch{border-radius:16px;overflow:hidden;border:1px solid var(--linea);background:#fff}
+.swatch .color{height:96px}
+.swatch .info{padding:10px 12px;font-size:.86rem}
+.swatch .info b{display:block;font-size:.95rem}
+.hex{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--gris)}
+.paso{display:flex;gap:16px;align-items:flex-start;margin:16px 0}
+.paso .num{flex:0 0 52px;height:52px;border-radius:50%;background:var(--marino);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem}
+.paso.n2 .num{background:var(--naranja);color:#20303F}
+.paso.n3 .num{background:var(--verde)}
+.paso.n4 .num{background:var(--tomate)}
+.mock-tel{max-width:330px;margin:20px auto;background:#fff;border:10px solid #20303F;
+  border-radius:34px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.mock-tel .top{background:#20303F;color:#fff;padding:12px;font-weight:800;text-align:center;font-size:.9rem}
+.mock-tel .body{padding:16px;background:#ECE5DD}
+.mock-tel .msg{background:#fff;border-radius:14px;padding:12px 14px;font-size:.9rem;margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.mock-tel .msg.yo{background:#DCF8C6;margin-left:38px}
+.mock-tel .msg b{color:var(--marino)}
+.mock-post{max-width:400px;margin:20px auto;background:#fff;border:1px solid var(--linea);
+  border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(30,58,95,.1)}
+.mock-post .cab{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+.mock-post .cab img{width:44px;height:44px;border-radius:50%;border:2px solid var(--naranja)}
+.mock-post .cab b{display:block;font-size:.95rem;color:var(--marino)}
+.mock-post .cab span{font-size:.78rem;color:var(--gris)}
+.mock-post .foto{background:var(--crema2)}
+.mock-post .foto img{width:100%;display:block}
+.mock-post .pie{padding:14px}
+.mock-post .pie .acciones{color:var(--marino);font-weight:800;font-size:.9rem;margin-bottom:6px}
+.mock-post .pie p{font-size:.93rem;margin:6px 0}
+.si{color:var(--verde);font-weight:800}
+.no{color:var(--tomate);font-weight:800}
+.chip{display:inline-block;background:var(--crema2);border:1.5px solid var(--linea);color:var(--marino);
+  border-radius:99px;padding:4px 13px;font-size:.82rem;font-weight:700;margin:3px 4px 3px 0}
+footer{text-align:center;padding:34px 20px;color:var(--gris);font-size:.88rem;
+  border-top:1px solid var(--linea);margin-top:50px}
+.dato{display:flex;gap:12px;align-items:baseline;margin:10px 0}
+.dato .k{flex:0 0 40%;font-weight:800;color:var(--marino)}
+.dato .v{flex:1}
+@media print{body{background:#fff}.card{box-shadow:none}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2{page-break-after:avoid}.card{page-break-inside:avoid}}
+@media (max-width:560px){body{font-size:17px}.hero img.logo{width:150px;height:150px}
+  .dato{display:block}.dato .k{flex:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="img/a4a822d7e5b4.jpg" alt="Logo de Cocina de Rossy">
+  <h1>Perfil del negocio</h1>
+  <p>Quiénes somos, qué hacemos y a quién le vendemos</p>
+  <p style="margin-top:14px"><span class="badge">Cocina de Rossy</span></p>
+</header>
+<div class="wrap">
+  <div class="nav"><a href="index.html">Inicio</a><a href="01-perfil-del-negocio.html" class="sel">Perfil del negocio</a><a href="02-marca-y-logo.html">Marca y logo</a><a href="03-desayunos.html">Desayunos</a><a href="04-lasana.html">Lasaña</a><a href="05-precios.html">Precios</a><a href="06-plan-30-dias.html">Plan de 30 días</a><a href="07-glosario.html">Palabras y dudas</a></div>
+<p class="small">Esta es la «cédula» del negocio: lo que se responde cuando alguien pregunta <em>«¿y qué es Cocina de Rossy?»</em>. Sirve para la familia, para un cliente, para una feria o para una publicación. Está escrita en palabras simples a propósito: si hay que explicarlo complicado, es que todavía no está bien entendido.</p><h2>Datos del negocio</h2><div class="card"><div class="dato"><div class="k">Nombre del negocio</div><div class="v">Cocina de Rossy</div></div><div class="dato"><div class="k">Qué es</div><div class="v">Un emprendimiento familiar de comida casera con dos líneas: desayunos todos los días y lasaña por encargo los fines de semana.</div></div><div class="dato"><div class="k">Quién lo lleva</div><div class="v">Rossy, con el apoyo de su familia.</div></div><div class="dato"><div class="k">Dónde está</div><div class="v">La Libertad, provincia de Santa Elena. Se entrega en La Libertad, Ballenita y Salinas.</div></div><div class="dato"><div class="k">A quién le vende</div><div class="v">Familias, oficinas y vecinos de La Libertad y sectores cercanos que quieren comer rico en casa sin cocinar.</div></div><div class="dato"><div class="k">Qué ofrece</div><div class="v">Desayunos (bolón de verde con queso o chicharrón, huevo frito, jugo de bistec, jugos, batidos, ensalada de frutas y café) · Lasaña de carne, pollo o vegetariana · Porción individual · Bandeja familiar de 6 porciones · Pan de ajo. La lasaña se puede congelar.</div></div><div class="dato"><div class="k">Cómo se pide</div><div class="v">Por WhatsApp. Los desayunos se piden para la mañana; la lasaña, con al menos un día de anticipación.</div></div><div class="dato"><div class="k">Cuándo se cocina</div><div class="v">Desayunos de lunes a sábado por la mañana. La lasaña, dos o tres días fijos por semana.</div></div><div class="dato"><div class="k">Cómo se paga</div><div class="v">Efectivo y transferencia bancaria.</div></div><div class="dato"><div class="k">Qué la hace distinta</div><div class="v">Es comida de casa hecha por una sola persona que responde con su nombre. El desayuno sostiene el negocio toda la semana y la lasaña es la ganancia del fin de semana.</div></div></div><h2>Cómo funciona</h2><div class="card" style="padding:12px"><img src="img/2b47e270da8a.jpg" alt="La casa de Rossy y el reparto" style="width:100%;display:block;border-radius:12px"></div><h2>La mascota: la gatita de Rossy</h2><div class="grid g2"><div><div class="card" style="text-align:center"><img src="img/a4a822d7e5b4.jpg" srcset="img/a4a822d7e5b4.jpg 320w, img/28a5e90df5ad.jpg 460w" sizes="290px" alt="Logo de Cocina de Rossy" style="max-width:290px;width:100%"></div></div><div><div class="card"><p>La mascota es una <b>gatita anaranjada con gorro de cocinera</b> que come lasaña con tenedor y cuchillo, muy contenta. Es la cara del negocio.</p><p>Se eligió un gato porque todo el mundo relaciona a los gatos con la lasaña, y porque a Rossy le gustan los gatos. Es un guiño amable, no una copia de ningún personaje conocido: es una gatita propia, con su propio nombre y su propia historia.</p><p>La mascota sirve para saludar a los clientes, para los stickers de WhatsApp y para las publicaciones. Cuando alguien vea la gatita, debe pensar en la cocina de Rossy.</p></div></div></div><h2>Por qué este negocio tiene espacio</h2><div class="ok"><p style="margin:0">En la provincia hay restaurantes italianos caros (de 20 a 25 dólares por persona) y pizzerías baratas. <b>En el medio no hay nada para una familia:</b> comida italiana rica, para llevar, en porción grande y a precio normal. Ese es el espacio de Rossy.</p></div><table><thead><tr><th>Lo que hay hoy</th><th>Lo que falta</th><th>Lo que ofrece Rossy</th></tr></thead><tbody><tr><td>Restaurantes italianos de USD 20 a 25 por persona, con mesas, en Salinas.</td><td>Opciones para comer en casa sin gastar como en restaurante.</td><td>Lasaña por encargo, entregada en la casa.</td></tr><tr><td>Pizzerías que venden la porción desde USD 2.</td><td>Comida que llene de verdad y se pueda compartir en familia.</td><td>Bandeja de 6 porciones a USD 19,00.</td></tr><tr><td>Un solo local vende lasaña, y es parte de un menú amplio.</td><td>Una marca que sea <b>especialista</b> en lasaña.</td><td>Una sola cosa hecha bien, con nombre propio.</td></tr><tr><td>Casi nadie tiene opción vegetariana.</td><td>Alternativa para quien no come carne.</td><td>Lasaña vegetariana siempre disponible.</td></tr></tbody></table><h2>Misión</h2><div class="tip"><p style="margin:0;font-size:1.1rem">Dar a las familias de La Libertad comida casera, abundante y rica todos los días, hecha con ingredientes de verdad y al precio de una comida normal: el desayuno por la mañana y la lasaña para compartir en casa.</p></div><h2>Visión</h2><div class="tip"><p style="margin:0;font-size:1.1rem">Ser la cocina de referencia de la península de Santa Elena en desayunos y lasaña y, en cuatro o cinco años, un negocio que camine solo: con un equipo que cocine, un administrador que organice y Rossy dedicada a la marca, la calidad y las decisiones importantes.</p></div><h2>En qué creemos</h2><div class="grid g2"><div class="card"><h4>Se cocina como para la propia familia</h4><p style="margin-bottom:0">Nada que no le daríamos a nuestros hijos.</p></div><div class="card"><h4>Se promete lo que se cumple</h4><p style="margin-bottom:0">Si se dice que llega a las 6, llega a las 6.</p></div><div class="card"><h4>Porción honesta</h4><p style="margin-bottom:0">El cliente tiene que quedar satisfecho, no con hambre.</p></div><div class="card"><h4>Trato de casa</h4><p style="margin-bottom:0">Se responde con nombre, se agradece y se recuerda al cliente.</p></div><div class="card"><h4>Cuentas claras</h4><p style="margin-bottom:0">Cada bandeja tiene su costo y su precio. Lo que no se mide, no se puede mejorar.</p></div></div><h2>Qué nos hace distintos</h2><div class="grid g2"><div class="card"><h4>Dos líneas, una misma cocina</h4><p style="margin-bottom:0">El desayuno trabaja de lunes a sábado y la lasaña el fin de semana. El mismo espacio y las mismas manos rinden toda la semana.</p></div><div class="card"><h4>Especialista, no menú amplio</h4><p style="margin-bottom:0">Se vende lasaña, no «comida italiana». Eso permite hacer una sola cosa muy bien.</p></div><div class="card"><h4>El bolón de verde con marca</h4><p style="margin-bottom:0">Es el desayuno más vendido de la costa y casi nadie lo vende con marca propia ni por encargo.</p></div><div class="card"><h4>Bandeja familiar</h4><p style="margin-bottom:0">Seis porciones listas para compartir. Ninguna pizzería ni restaurante de la zona lo ofrece así.</p></div><div class="card"><h4>Se puede congelar</h4><p style="margin-bottom:0">El cliente compra hoy y come cuando quiera. Compra tiempo, no solo comida.</p></div><div class="card"><h4>Opción vegetariana siempre</h4><p style="margin-bottom:0">Casi nadie la tiene en la provincia.</p></div><div class="card"><h4>Marca con nombre y rostro</h4><p style="margin-bottom:0">El negocio se llama Rossy y la mascota la representa. Hay una persona detrás.</p></div><div class="card"><h4>Horario que se cumple</h4><p style="margin-bottom:0">Varias reseñas de la competencia critican horarios irregulares. Cumplir ya es diferenciarse.</p></div></div><h2>A quién le vendemos</h2><div class="grid g2"><div class="card"><h4>Trabajadores de la mañana</h4><p style="margin-bottom:0">Quienes salen temprano a trabajar y quieren desayunar algo caliente y contundente antes de empezar. Son la venta de todos los días.</p></div><div class="card"><h4>Familias de La Libertad</h4><p style="margin-bottom:0">Padres que trabajan y quieren resolver la cena sin cocinar. Compran sobre todo la bandeja familiar.</p></div><div class="card"><h4>Oficinas y trabajadores</h4><p style="margin-bottom:0">Almuerzo pedido por grupos. Piden varias porciones el mismo día.</p></div><div class="card"><h4>Residentes extranjeros y de segunda vivienda</h4><p style="margin-bottom:0">En Ballenita y Salinas. Valoran lo casero, lo vegetariano y la puntualidad.</p></div><div class="card"><h4>Celebraciones y reuniones</h4><p style="margin-bottom:0">Cumpleaños, reuniones familiares y eventos pequeños donde se necesita comida para varios.</p></div></div><h2>La meta de los primeros años</h2><p>La idea no es que Rossy trabaje más, sino que el negocio aprenda a caminar sin ella. La meta es que en cuatro o cinco años Rossy esté solo en el 25% del trabajo: la marca, la calidad y las decisiones importantes.</p><table><thead><tr><th>Momento</th><th>Cuánto depende de Rossy</th><th>Qué pasa</th></tr></thead><tbody><tr><td>Año 1</td><td>100%</td><td>Rossy cocina, vende y entrega. Escribe la receta con números.</td></tr><tr><td>Año 2</td><td>70%</td><td>Entra un ayudante y se delega la entrega.</td></tr><tr><td>Año 3</td><td>45%</td><td>Una cocinera líder produce con la receta escrita.</td></tr><tr><td>Años 4 y 5</td><td>25%</td><td>Un administrador lleva la operación diaria.</td></tr></tbody></table>
+  <footer>
+    <b>Cocina de Rossy</b> · La Libertad, Santa Elena<br>
+    Pedidos por WhatsApp <b>0979354185</b> · cocinaderossy.ec@gmail.com<br>
+    <span class="small">Documento de trabajo para Rossy y su familia</span>
+    
+  </footer>
+</div>
+</body>
+</html>

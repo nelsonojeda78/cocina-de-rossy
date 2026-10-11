@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marca y logo · Cocina de Rossy</title>
+<style>
+:root{
+  --marino:#1E293B; --marino2:#0F172A; --naranja:#F97316; --naranja2:#EA580C;
+  --crema:#FFF9F2; --crema2:#F1F5F9; --trigo:#FDE047; --tomate:#B91C1C;
+  --verde:#15803D; --turquesa:#2DD4BF; --gris:#64748B; --linea:#E2E8F0; --tinta:#1E293B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--tinta);line-height:1.75;
+  font-family:"Quicksand","Trebuchet MS",Verdana,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:18px}
+.wrap{max-width:1060px;margin:0 auto;padding:26px 20px 80px}
+.hero{background:linear-gradient(140deg,var(--marino),var(--marino2));color:#fff;
+  padding:46px 20px 40px;text-align:center;border-bottom:10px solid var(--naranja)}
+.hero img.logo{width:210px;height:210px;object-fit:contain;margin-bottom:16px;
+  background:var(--crema);border-radius:50%;padding:8px;
+  box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.hero h1{margin:0 0 6px;font-size:2.4rem;letter-spacing:.5px}
+.hero p{margin:6px 0;opacity:.95;font-size:1.05rem}
+.badge{display:inline-block;background:var(--naranja);color:#20303F;padding:6px 18px;
+  border-radius:99px;font-size:.82rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+h2{font-size:1.7rem;margin:54px 0 10px;padding-left:16px;border-left:10px solid var(--naranja);color:var(--marino)}
+h3{font-size:1.22rem;margin:30px 0 8px;color:var(--naranja2)}
+h4{margin:20px 0 6px;color:var(--marino)}
+p{margin:12px 0}
+.card{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:22px 26px;margin:18px 0;
+  box-shadow:0 6px 20px rgba(30,58,95,.07)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+ul,ol{padding-left:24px}
+li{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.96rem}
+th,td{border:1px solid var(--linea);padding:11px 13px;text-align:left;vertical-align:top}
+th{background:var(--marino);color:#fff;font-weight:700}
+tr:nth-child(even) td{background:#FDF8F1}
+.ok{background:#EAF7EF;border:1px solid #A9DDBE;border-left:9px solid var(--verde);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.aviso{background:#FFF4E5;border:1px solid #F0C88A;border-left:9px solid var(--naranja);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.mal{background:#FDECEC;border:1px solid #F2B4B4;border-left:9px solid var(--tomate);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.tip{background:#EEF3FA;border:1px solid #C4D4EA;border-left:9px solid var(--marino);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0}
+.nav a{background:#fff;border:2.5px solid var(--naranja);color:var(--naranja2);text-decoration:none;
+  padding:11px 20px;border-radius:99px;font-weight:800;font-size:.95rem}
+.nav a:hover{background:var(--naranja);color:#20303F}
+.nav a.sel{background:var(--marino);border-color:var(--marino);color:#fff}
+.small{font-size:.9rem;color:var(--gris)}
+.precio{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:20px 0}
+.precio .tarjeta{flex:1 1 260px;max-width:340px;background:#fff;border:3px solid var(--marino);
+  border-radius:22px;padding:22px;text-align:center;position:relative}
+.precio .tarjeta.destacada{border-color:var(--naranja);background:var(--crema2)}
+.precio .tarjeta .cinta{position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:var(--naranja);color:#20303F;font-size:.75rem;font-weight:800;padding:5px 14px;
+  border-radius:99px;letter-spacing:1px;white-space:nowrap}
+.precio .num{font-size:2.6rem;font-weight:800;color:var(--marino);margin:8px 0 0}
+.precio .num small{font-size:1rem;font-weight:700;color:var(--gris)}
+.swatch{border-radius:16px;overflow:hidden;border:1px solid var(--linea);background:#fff}
+.swatch .color{height:96px}
+.swatch .info{padding:10px 12px;font-size:.86rem}
+.swatch .info b{display:block;font-size:.95rem}
+.hex{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--gris)}
+.paso{display:flex;gap:16px;align-items:flex-start;margin:16px 0}
+.paso .num{flex:0 0 52px;height:52px;border-radius:50%;background:var(--marino);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem}
+.paso.n2 .num{background:var(--naranja);color:#20303F}
+.paso.n3 .num{background:var(--verde)}
+.paso.n4 .num{background:var(--tomate)}
+.mock-tel{max-width:330px;margin:20px auto;background:#fff;border:10px solid #20303F;
+  border-radius:34px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.mock-tel .top{background:#20303F;color:#fff;padding:12px;font-weight:800;text-align:center;font-size:.9rem}
+.mock-tel .body{padding:16px;background:#ECE5DD}
+.mock-tel .msg{background:#fff;border-radius:14px;padding:12px 14px;font-size:.9rem;margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.mock-tel .msg.yo{background:#DCF8C6;margin-left:38px}
+.mock-tel .msg b{color:var(--marino)}
+.mock-post{max-width:400px;margin:20px auto;background:#fff;border:1px solid var(--linea);
+  border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(30,58,95,.1)}
+.mock-post .cab{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+.mock-post .cab img{width:44px;height:44px;border-radius:50%;border:2px solid var(--naranja)}
+.mock-post .cab b{display:block;font-size:.95rem;color:var(--marino)}
+.mock-post .cab span{font-size:.78rem;color:var(--gris)}
+.mock-post .foto{background:var(--crema2)}
+.mock-post .foto img{width:100%;display:block}
+.mock-post .pie{padding:14px}
+.mock-post .pie .acciones{color:var(--marino);font-weight:800;font-size:.9rem;margin-bottom:6px}
+.mock-post .pie p{font-size:.93rem;margin:6px 0}
+.si{color:var(--verde);font-weight:800}
+.no{color:var(--tomate);font-weight:800}
+.chip{display:inline-block;background:var(--crema2);border:1.5px solid var(--linea);color:var(--marino);
+  border-radius:99px;padding:4px 13px;font-size:.82rem;font-weight:700;margin:3px 4px 3px 0}
+footer{text-align:center;padding:34px 20px;color:var(--gris);font-size:.88rem;
+  border-top:1px solid var(--linea);margin-top:50px}
+.dato{display:flex;gap:12px;align-items:baseline;margin:10px 0}
+.dato .k{flex:0 0 40%;font-weight:800;color:var(--marino)}
+.dato .v{flex:1}
+@media print{body{background:#fff}.card{box-shadow:none}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2{page-break-after:avoid}.card{page-break-inside:avoid}}
+@media (max-width:560px){body{font-size:17px}.hero img.logo{width:150px;height:150px}
+  .dato{display:block}.dato .k{flex:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="img/a4a822d7e5b4.jpg" alt="Logo de Cocina de Rossy">
+  <h1>Marca y logo</h1>
+  <p>Tres variedades, porción individual y bandeja familiar · por encargo</p>
+  <p style="margin-top:14px"><span class="badge">Cocina de Rossy</span></p>
+</header>
+<div class="wrap">
+  <div class="nav"><a href="index.html">Inicio</a><a href="01-perfil-del-negocio.html">Perfil del negocio</a><a href="02-marca-y-logo.html">Marca y logo</a><a href="03-desayunos.html">Desayunos</a><a href="04-lasana.html" class="sel">Lasaña</a><a href="05-precios.html">Precios</a><a href="06-plan-30-dias.html">Plan de 30 días</a><a href="07-glosario.html">Palabras y dudas</a></div>
+<p class="small">La lasaña es el plato insignia y la venta del fin de semana. Se prepara por encargo, en tres variedades, y sale en porción individual o en bandeja familiar para compartir.</p><h2>Las tres variedades</h2><div class="card" style="padding:12px"><img src="img/fb4172e1aa61.jpg" alt="Los tres sabores de lasaña" style="width:100%;display:block;border-radius:12px"></div><div class="grid g3"><div class="card"><h4>De carne</h4><p style="margin-bottom:0">La principal y la que más se vende.</p></div><div class="card"><h4>De pollo</h4><p style="margin-bottom:0">Para quien no come carne roja.</p></div><div class="card"><h4>Vegetariana</h4><p style="margin-bottom:0">Casi nadie la tiene en la provincia.</p></div></div><h2>Los dos formatos</h2><div class="precio"><div class="tarjeta"><div style="font-size:1.6rem">🍽️</div><h4>Porción individual</h4><p class="small">Para una persona</p><div class="num"><small>USD</small> 4,00</div><p class="small" style="margin-bottom:0">Deja USD 1,93 de margen</p></div><div class="tarjeta destacada"><span class="cinta">PARA COMPARTIR</span><div style="font-size:1.6rem">👨‍👩‍👧</div><h4>Bandeja familiar</h4><p class="small">6 porciones</p><div class="num"><small>USD</small> 19,00</div><p class="small" style="margin-bottom:0">Sale a USD 3,17 la porción. Deja USD 8,22.</p></div></div><h2>Cómo se pide</h2><div class="paso n1"><div class="num">1</div><div><b>El cliente escribe al WhatsApp</b><br><span>Se responde con el catálogo y los precios. Se anota el nombre, el sabor y si es porción o bandeja.</span></div></div><div class="paso n2"><div class="num">2</div><div><b>Se confirma el pedido y el día</b><br><span>Los pedidos se cierran el día anterior. La cocina solo trabaja sobre pedidos confirmados.</span></div></div><div class="paso n3"><div class="num">3</div><div><b>Se cocina el viernes o el sábado</b><br><span>Se produce por lotes y se hornea todo junto.</span></div></div><div class="paso n4"><div class="num">4</div><div><b>Se entrega y se cobra</b><br><span>Se entrega a la hora acordada, con el sello de la marca en la bandeja. Se cobra en efectivo o por transferencia.</span></div></div><h2>Por qué la lasaña sola no alcanzaba</h2><div class="aviso"><p style="margin:0">La lasaña cuesta USD 10.78 por bandeja y se vende a USD 19,00: deja bien, pero la familia solo la compra el fin de semana. Vendiendo solo lasaña harían falta <b>35 bandejas al mes</b> para cubrir los gastos. Con el desayuno, en cambio, se cubren con <b>6 desayunos completos al día</b>. Por eso las dos líneas se complementan: el desayuno paga los gastos fijos y la lasaña es la ganancia del fin de semana.</p></div><h2>El empaque y la marca</h2><div class="card" style="padding:12px"><img src="img/436752f18d43.jpg" alt="La marca aplicada al empaque" style="width:100%;display:block;border-radius:12px"></div>
+  <footer>
+    <b>Cocina de Rossy</b> · La Libertad, Santa Elena<br>
+    Pedidos por WhatsApp <b>0979354185</b> · cocinaderossy.ec@gmail.com<br>
+    <span class="small">Documento de trabajo para Rossy y su familia</span>
+    
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marca y logo · Cocina de Rossy</title>
+<style>
+:root{
+  --marino:#1E293B; --marino2:#0F172A; --naranja:#F97316; --naranja2:#EA580C;
+  --crema:#FFF9F2; --crema2:#F1F5F9; --trigo:#FDE047; --tomate:#B91C1C;
+  --verde:#15803D; --turquesa:#2DD4BF; --gris:#64748B; --linea:#E2E8F0; --tinta:#1E293B;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--crema);color:var(--tinta);line-height:1.75;
+  font-family:"Quicksand","Trebuchet MS",Verdana,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:18px}
+.wrap{max-width:1060px;margin:0 auto;padding:26px 20px 80px}
+.hero{background:linear-gradient(140deg,var(--marino),var(--marino2));color:#fff;
+  padding:46px 20px 40px;text-align:center;border-bottom:10px solid var(--naranja)}
+.hero img.logo{width:210px;height:210px;object-fit:contain;margin-bottom:16px;
+  background:var(--crema);border-radius:50%;padding:8px;
+  box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.hero h1{margin:0 0 6px;font-size:2.4rem;letter-spacing:.5px}
+.hero p{margin:6px 0;opacity:.95;font-size:1.05rem}
+.badge{display:inline-block;background:var(--naranja);color:#20303F;padding:6px 18px;
+  border-radius:99px;font-size:.82rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+h2{font-size:1.7rem;margin:54px 0 10px;padding-left:16px;border-left:10px solid var(--naranja);color:var(--marino)}
+h3{font-size:1.22rem;margin:30px 0 8px;color:var(--naranja2)}
+h4{margin:20px 0 6px;color:var(--marino)}
+p{margin:12px 0}
+.card{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:22px 26px;margin:18px 0;
+  box-shadow:0 6px 20px rgba(30,58,95,.07)}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+ul,ol{padding-left:24px}
+li{margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.96rem}
+th,td{border:1px solid var(--linea);padding:11px 13px;text-align:left;vertical-align:top}
+th{background:var(--marino);color:#fff;font-weight:700}
+tr:nth-child(even) td{background:#FDF8F1}
+.ok{background:#EAF7EF;border:1px solid #A9DDBE;border-left:9px solid var(--verde);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.aviso{background:#FFF4E5;border:1px solid #F0C88A;border-left:9px solid var(--naranja);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.mal{background:#FDECEC;border:1px solid #F2B4B4;border-left:9px solid var(--tomate);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.tip{background:#EEF3FA;border:1px solid #C4D4EA;border-left:9px solid var(--marino);
+  border-radius:16px;padding:16px 20px;margin:18px 0}
+.nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0}
+.nav a{background:#fff;border:2.5px solid var(--naranja);color:var(--naranja2);text-decoration:none;
+  padding:11px 20px;border-radius:99px;font-weight:800;font-size:.95rem}
+.nav a:hover{background:var(--naranja);color:#20303F}
+.nav a.sel{background:var(--marino);border-color:var(--marino);color:#fff}
+.small{font-size:.9rem;color:var(--gris)}
+.precio{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:20px 0}
+.precio .tarjeta{flex:1 1 260px;max-width:340px;background:#fff;border:3px solid var(--marino);
+  border-radius:22px;padding:22px;text-align:center;position:relative}
+.precio .tarjeta.destacada{border-color:var(--naranja);background:var(--crema2)}
+.precio .tarjeta .cinta{position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:var(--naranja);color:#20303F;font-size:.75rem;font-weight:800;padding:5px 14px;
+  border-radius:99px;letter-spacing:1px;white-space:nowrap}
+.precio .num{font-size:2.6rem;font-weight:800;color:var(--marino);margin:8px 0 0}
+.precio .num small{font-size:1rem;font-weight:700;color:var(--gris)}
+.swatch{border-radius:16px;overflow:hidden;border:1px solid var(--linea);background:#fff}
+.swatch .color{height:96px}
+.swatch .info{padding:10px 12px;font-size:.86rem}
+.swatch .info b{display:block;font-size:.95rem}
+.hex{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--gris)}
+.paso{display:flex;gap:16px;align-items:flex-start;margin:16px 0}
+.paso .num{flex:0 0 52px;height:52px;border-radius:50%;background:var(--marino);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.2rem}
+.paso.n2 .num{background:var(--naranja);color:#20303F}
+.paso.n3 .num{background:var(--verde)}
+.paso.n4 .num{background:var(--tomate)}
+.mock-tel{max-width:330px;margin:20px auto;background:#fff;border:10px solid #20303F;
+  border-radius:34px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.mock-tel .top{background:#20303F;color:#fff;padding:12px;font-weight:800;text-align:center;font-size:.9rem}
+.mock-tel .body{padding:16px;background:#ECE5DD}
+.mock-tel .msg{background:#fff;border-radius:14px;padding:12px 14px;font-size:.9rem;margin-bottom:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.mock-tel .msg.yo{background:#DCF8C6;margin-left:38px}
+.mock-tel .msg b{color:var(--marino)}
+.mock-post{max-width:400px;margin:20px auto;background:#fff;border:1px solid var(--linea);
+  border-radius:20px;overflow:hidden;box-shadow:0 8px 22px rgba(30,58,95,.1)}
+.mock-post .cab{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--linea)}
+.mock-post .cab img{width:44px;height:44px;border-radius:50%;border:2px solid var(--naranja)}
+.mock-post .cab b{display:block;font-size:.95rem;color:var(--marino)}
+.mock-post .cab span{font-size:.78rem;color:var(--gris)}
+.mock-post .foto{background:var(--crema2)}
+.mock-post .foto img{width:100%;display:block}
+.mock-post .pie{padding:14px}
+.mock-post .pie .acciones{color:var(--marino);font-weight:800;font-size:.9rem;margin-bottom:6px}
+.mock-post .pie p{font-size:.93rem;margin:6px 0}
+.si{color:var(--verde);font-weight:800}
+.no{color:var(--tomate);font-weight:800}
+.chip{display:inline-block;background:var(--crema2);border:1.5px solid var(--linea);color:var(--marino);
+  border-radius:99px;padding:4px 13px;font-size:.82rem;font-weight:700;margin:3px 4px 3px 0}
+footer{text-align:center;padding:34px 20px;color:var(--gris);font-size:.88rem;
+  border-top:1px solid var(--linea);margin-top:50px}
+.dato{display:flex;gap:12px;align-items:baseline;margin:10px 0}
+.dato .k{flex:0 0 40%;font-weight:800;color:var(--marino)}
+.dato .v{flex:1}
+@media print{body{background:#fff}.card{box-shadow:none}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2{page-break-after:avoid}.card{page-break-inside:avoid}}
+@media (max-width:560px){body{font-size:17px}.hero img.logo{width:150px;height:150px}
+  .dato{display:block}.dato .k{flex:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="img/a4a822d7e5b4.jpg" alt="Logo de Cocina de Rossy">
+  <h1>Marca y logo</h1>
+  <p>La gatita, los colores, las letras y la forma de hablar</p>
+  <p style="margin-top:14px"><span class="badge">Cocina de Rossy</span></p>
+</header>
+<div class="wrap">
+  <div class="nav"><a href="index.html">Inicio</a><a href="01-perfil-del-negocio.html">Perfil del negocio</a><a href="02-marca-y-logo.html" class="sel">Marca y logo</a><a href="03-desayunos.html">Desayunos</a><a href="04-lasana.html">Lasaña</a><a href="05-precios.html">Precios</a><a href="06-plan-30-dias.html">Plan de 30 días</a><a href="07-glosario.html">Palabras y dudas</a></div>
+<p class="small">La marca es el nombre, el logo y la forma de hablar del negocio. Es lo que la gente recuerda cuando piensa en la cocina de Rossy.</p><h2>El logo</h2><div class="grid g2"><div class="card" style="text-align:center"><img src="img/28a5e90df5ad.jpg" style="max-width:330px;width:100%" alt="Logo principal"><p class="small" style="margin-bottom:0">Versión principal, sobre fondo crema.</p></div><div class="card"><h4>Qué dice y qué muestra</h4><ul><li><b>COCINA DE ROSSY</b> en la parte de arriba, en azul marino.</li><li>La <b>gatita cocinera</b> con gorro, cocinando en una olla.</li><li><b>Espigas de trigo</b> a los lados: recuerdan la pasta y lo casero.</li><li>El <b>aro azul marino</b> que encierra todo el emblema.</li><li>La <b>olla humeante</b> con el guiso, que representa la cocina de casa.</li><li>La frase <b>COMIDA PARA LLEVAR</b> abajo, que explica cómo se vende.</li></ul></div></div><h2>Cómo se ve en el empaque</h2><div class="card" style="padding:12px"><img src="img/436752f18d43.jpg" alt="La marca aplicada al empaque" style="width:100%;display:block;border-radius:12px"></div><h2>Los colores</h2><p>Estos son los colores oficiales. Se sacaron del propio logo, así que todo lo que se haga (publicaciones, carteles, etiquetas) debe usar estos mismos tonos.</p><div class="grid g4"><div class="swatch"><div class="color" style="background:#1E293B"></div><div class="info"><b>Azul marino</b><span class="hex">#1E293B</span><br>El color del círculo y de los textos. Es la base de la marca.</div></div><div class="swatch"><div class="color" style="background:#F97316"></div><div class="info"><b>Naranja gatita</b><span class="hex">#F97316</span><br>El color de la mascota. Aporta calidez, energía y hambre.</div></div><div class="swatch"><div class="color" style="background:#EA580C"></div><div class="info"><b>Naranja tostado</b><span class="hex">#EA580C</span><br>Las rayas del gato y los textos naranjas sobre fondo claro.</div></div><div class="swatch"><div class="color" style="background:#FACC15"></div><div class="info"><b>Amarillo queso</b><span class="hex">#FACC15</span><br>La frase «COMIDA PARA LLEVAR» y el queso de la lasaña.</div></div><div class="swatch"><div class="color" style="background:#FFFBEB"></div><div class="info"><b>Crema</b><span class="hex">#FFFBEB</span><br>El fondo interior del emblema. Da limpieza y hace resaltar el naranja.</div></div><div class="swatch"><div class="color" style="background:#FEF3C7"></div><div class="info"><b>Crema del gato</b><span class="hex">#FEF3C7</span><br>El hocico y el pecho de la mascota.</div></div><div class="swatch"><div class="color" style="background:#2DD4BF"></div><div class="info"><b>Turquesa</b><span class="hex">#2DD4BF</span><br>La franja del fondo del emblema. Se usa con moderación.</div></div><div class="swatch"><div class="color" style="background:#C4A484"></div><div class="info"><b>Café de mesa</b><span class="hex">#C4A484</span><br>El mantel de madera del emblema. Solo aparece en el logo.</div></div><div class="swatch"><div class="color" style="background:#FFFFFF"></div><div class="info"><b>Blanco</b><span class="hex">#FFFFFF</span><br>Los textos sobre el azul marino y los fondos limpios.</div></div><div class="swatch"><div class="color" style="background:#F1F5F9"></div><div class="info"><b>Gris azulado</b><span class="hex">#F1F5F9</span><br>Fondos suaves de tarjetas y tablas en la web.</div></div></div><h2>Las letras</h2><div class="card"><table><thead><tr><th>Letra</th><th>Dónde se usa</th></tr></thead><tbody><tr><td>Quicksand</td><td>La letra redondeada y amable que se usa en la web y las redes. Es gratis y parecida a la del logo.</td></tr><tr><td>Para títulos</td><td>Quicksand en negrita, azul marino.</td></tr><tr><td>Para textos</td><td>Quicksand normal o medium, en gris azulado.</td></tr><tr><td>Impresos</td><td>Si Quicksand no está disponible, se usa Verdana o Trebuchet MS.</td></tr></tbody></table></div><h2>Cómo se usa el logo (y cómo no)</h2><div class="grid g2"><div class="card"><h4>Se usa tal cual</h4><p style="margin-bottom:0">Nunca se deforma, ni se estira, ni se le cambian los colores.</p></div><div class="card"><h4>Espacio libre</h4><p style="margin-bottom:0">Dejar alrededor del logo un espacio igual al ancho de la palabra «LASAÑA».</p></div><div class="card"><h4>Tamaño mínimo</h4><p style="margin-bottom:0">En pantalla, no menos de 90 píxeles. Impreso, no menos de 2 centímetros.</p></div><div class="card"><h4>Sobre fondo claro</h4><p style="margin-bottom:0">Se usa el logo a todo color o el azul marino.</p></div><div class="card"><h4>Sobre fondo oscuro</h4><p style="margin-bottom:0">Se usa la versión con el aro blanco, para que no se pierda el borde.</p></div><div class="card"><h4>No se hace</h4><p style="margin-bottom:0">No se le pone sombras, ni contornos nuevos, ni se lo recorta a medias, ni se lo pone sobre fotos muy cargadas.</p></div></div><h2>Las piezas que ya están hechas</h2><p>Todas estas imágenes están en la carpeta <b>web/assets</b> del proyecto. Se pueden usar tal cual, en el celular o en la computadora.</p><div class="card"><table><thead><tr><th>Archivo</th><th>Para qué sirve</th></tr></thead><tbody><tr><td>logo-rossy.png</td><td>El logo principal sobre fondo crema. Es el que más se usa.</td></tr><tr><td>logo-rossy-transparente.png</td><td>El logo sin fondo. Para ponerlo sobre cualquier color.</td></tr><tr><td>logo-rossy-sticker.png</td><td>Con un aro blanco. Para fondos oscuros o para imprimir stickers.</td></tr><tr><td>logo-rossy-sobre-marino.png</td><td>El emblema sobre fondo azul marino, para fondos oscuros.</td></tr><tr><td>logo-rossy-transparente.png</td><td>Sin fondo, para ponerlo sobre cualquier color.</td></tr><tr><td>perfil-redes.png</td><td>La foto de perfil lista para WhatsApp, Instagram y Facebook.</td></tr><tr><td>avatar-marino.png</td><td>La foto de perfil sobre fondo azul marino.</td></tr><tr><td>portada-facebook.png</td><td>La portada de la página de Facebook.</td></tr><tr><td>portada-web.png</td><td>La imagen principal del sitio web.</td></tr><tr><td>post-precios.png</td><td>Publicación con los precios. Se actualiza cuando cambien.</td></tr><tr><td>post-promocion.png</td><td>Publicación general para anunciar que hay lasaña.</td></tr><tr><td>post-proceso.png</td><td>Publicación de «así la hacemos», cuenta los cuatro pasos.</td></tr><tr><td>historia-hoy-hay.png</td><td>Historia vertical para el día que hay producción.</td></tr><tr><td>catalogo-whatsapp.png</td><td>El catálogo que se envía por WhatsApp cuando preguntan precios.</td></tr><tr><td>sello-empaque.png</td><td>El sello redondo para pegar en la tapa de la bandeja, con espacio para la fecha.</td></tr><tr><td>stickers-whatsapp.png</td><td>Los stickers de la mascota para usar en las conversaciones.</td></tr><tr><td>icono-512.png</td><td>El icono para la aplicación y el sitio web.</td></tr></tbody></table></div><h2>Así se ve en el celular</h2><div class="grid g2"><div><div class="mock-post"><div class="cab"><img src="img/cb1842de0805.png" alt="perfil"><div><b>cocinaderossy</b><span>La Libertad, Santa Elena</span></div></div><div class="foto"><img src="img/0ae7815e2425.jpg" alt="publicación de precios"></div><div class="pie"><div class="acciones">&#10084; Le gusta a 128 personas</div><p><b>cocinaderossy</b> Desayunos todos los días y lasaña los fines de semana. Escribe al WhatsApp y reserva.</p></div></div></div><div><div class="mock-tel"><div class="top">WhatsApp Business</div><div class="body"><div class="msg">Hola, ¿cuánto cuesta la bandeja familiar?</div><div class="msg yo">¡Hola! La bandeja de 6 porciones está en <b>USD 19,00</b>. Se puede pedir para el jueves o el sábado. ¿Le reservo una? 😺</div><div class="msg">Sí, para el sábado por favor.</div><div class="msg yo">¡Listo! Anotado para el sábado. Le mando la dirección para coordinar la entrega. ¡Gracias por la confianza!</div></div></div></div></div><h2>Cómo habla la marca</h2><div class="grid g2"><div class="card"><h4>Habla como Rossy</h4><p style="margin-bottom:0">En primera persona y con palabras de casa: «ya están los bolones», «hoy hice lasaña», «quedan cuatro bandejas», «gracias por la confianza».</p></div><div class="card"><h4>Frases cortas</h4><p style="margin-bottom:0">Si no se entiende en una leída, hay que escribirlo otra vez.</p></div><div class="card"><h4>Cuenta el proceso</h4><p style="margin-bottom:0">La gente compra cuando ve cómo se hace: el bolón armándose, la salsa, las capas, el horno, el queso estirándose.</p></div><div class="card"><h4>Sin exagerar</h4><p style="margin-bottom:0">Nada de «la mejor del mundo». Mejor: «hecha en casa, con calma».</p></div><div class="card"><h4>Responde siempre</h4><p style="margin-bottom:0">Aunque sea para decir que no hay cupo. Un cliente ignorado no vuelve.</p></div></div><h2>Las redes sociales</h2><div class="card"><table><thead><tr><th>Tema</th><th>Qué hacer</th></tr></thead><tbody><tr><td>Foto de perfil</td><td>El logo en círculo (perfil-redes.png), igual en WhatsApp, Instagram y Facebook. La misma cara en todas partes.</td></tr><tr><td>Nombre de usuario</td><td>El mismo en todas las redes, en minúsculas: @cocinaderossy.</td></tr><tr><td>Biografía</td><td>Desayunos todos los días · Lasaña los fines de semana · Hecho en casa en La Libertad, Santa Elena · Pedidos por WhatsApp</td></tr><tr><td>Qué publicar</td><td>Fotos del desayuno de la mañana, el proceso de la lasaña, el corte, clientes contentos y el aviso de cupos del fin de semana.</td></tr><tr><td>Cada cuánto</td><td>Tres veces por semana como mínimo. Es mejor publicar tres veces bien que siete veces de cualquier manera.</td></tr><tr><td>Horarios que funcionan</td><td>Publicar entre las 11:00 y las 13:00 (antes del almuerzo) y entre las 17:00 y las 19:00 (antes de la cena).</td></tr><tr><td>Cómo cerrar la venta</td><td>Cada publicación termina con una instrucción concreta: «Escribe al WhatsApp y reserva tu bandeja».</td></tr><tr><td>Reseñas</td><td>Cada semana, pedir a un cliente satisfecho que deje una reseña o una foto. Veinte reseñas buenas son una ventaja real.</td></tr></tbody></table></div><h2>Qué sí y qué no con la marca</h2><div class="grid g2"><div class="ok"><h4 style="margin-top:0"><span class="si">Sí</span></h4><ul style="margin-bottom:0"><li>Usar siempre el mismo logo y los mismos colores.</li><li>Escribir el nombre siempre igual: <b>Cocina de Rossy</b>.</li><li>Responder siempre, incluso para decir que no hay cupo.</li><li>Mostrar el proceso: la salsa, las capas, el horno.</li><li>Pedir reseñas a los clientes contentos.</li></ul></div><div class="mal"><h4 style="margin-top:0"><span class="no">No</span></h4><ul style="margin-bottom:0"><li>Deformar ni estirar el logo.</li><li>Cambiarle los colores o ponerle sombras nuevas.</li><li>Usar la imagen de personajes de caricaturas que no son nuestros.</li><li>Prometer una hora de entrega que no se puede cumplir.</li><li>Poner precios distintos a los publicados.</li></ul></div></div>
+  <footer>
+    <b>Cocina de Rossy</b> · La Libertad, Santa Elena<br>
+    Pedidos por WhatsApp <b>0979354185</b> · cocinaderossy.ec@gmail.com<br>
+    <span class="small">Documento de trabajo para Rossy y su familia</span>
+    
+  </footer>
+</div>
+</body>
+</html>
